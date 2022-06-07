@@ -14,7 +14,7 @@ export default function Home() {
 
 function App() {
   const { active, account, activate, deactivate, chainId, library } = useWeb3React();
-  const [currentAccount, setCurrentAccount] = useState(account);
+  const [currentAccount, setCurrentAccount] = useState(account as string);
   const [currentChain, setCurrentChain] = useState('ropsten');
   const [ethBalance, setEthBalance] = useState(0);
   const [tokenBalance, setTokenBalance] = useState(0);
@@ -124,7 +124,7 @@ function App() {
         />
         <button
             className="border-2 border-gray-200 px-2"
-            onClick={() => transfer(toAddress, amountToSend, account)}
+            onClick={() => transfer(toAddress, amountToSend, account as string)}
           >
             Send {tokenData.symbol}
           </button>
